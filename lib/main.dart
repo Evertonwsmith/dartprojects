@@ -1,3 +1,4 @@
+import 'package:dartprojects/culorTwo.dart';
 import 'package:dartprojects/decorations.dart';
 import 'package:flutter/material.dart';
 import 'package:dartprojects/culor.dart';
@@ -48,10 +49,10 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MagicLife()),
+                  MaterialPageRoute(builder: (context) => const CulorTwo()),
                 );
               },
-              child: const Text('Magic Life'),
+              child: const Text('Culor Two'),
             ),
             SizedBox(height: 20),
             // ElevatedButton(
