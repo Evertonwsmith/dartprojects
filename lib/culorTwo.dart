@@ -36,11 +36,13 @@ class _GamePageState extends State<GamePage> {
   late List colorList;
   late int ranInt;
   late Text progressText;
+  late Widget statusBox;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    statusBox = SizedBox(height: 15);
     gameDate = DateTime.now().millisecondsSinceEpoch;
     color1 = Color.fromARGB(255, Random().nextInt(256), Random().nextInt(256),
         Random().nextInt(256));
@@ -67,6 +69,11 @@ class _GamePageState extends State<GamePage> {
     colorList = [color1, color2, color3];
     int randomNumber = Random().nextInt(3) + 1;
     ranInt = randomNumber - 1;
+    Future.delayed(const Duration(seconds: 1), () {
+      setState(() {
+        statusBox = SizedBox(height: 15);
+      });
+    });
   }
 
   @override
@@ -83,7 +90,9 @@ class _GamePageState extends State<GamePage> {
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             Text(progress.toString() + "/5", style: TextStyle(fontSize: 40))
           ]),
-          SizedBox(height: 50),
+          SizedBox(height: 20),
+          statusBox,
+          SizedBox(height: 20),
           Container(
             width: 100,
             height: 100,
@@ -135,6 +144,7 @@ class _GamePageState extends State<GamePage> {
   correct() {
     setState(() {
       progress++;
+      statusBox = Text("Correct!", style: TextStyle(fontSize: 24));
       if (progress == 5) {
         _showEndGame();
       } else {
@@ -151,6 +161,7 @@ class _GamePageState extends State<GamePage> {
 
   wrong() {
     setState(() {
+      statusBox = Text("Wrong!", style: TextStyle(fontSize: 24));
       if (progress > 0) {
         progress--;
       }
