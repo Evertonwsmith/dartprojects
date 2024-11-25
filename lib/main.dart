@@ -2,7 +2,7 @@ import 'package:dartprojects/culorTwo.dart';
 import 'package:dartprojects/decorations.dart';
 import 'package:flutter/material.dart';
 import 'package:dartprojects/culor.dart';
-import 'package:dartprojects/magicLife.dart';
+import 'package:dartprojects/demoApp.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +33,17 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ElevatedButton(
+              style: AppDecorations.buttonStyle(),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DemoApp()),
+                );
+              },
+              child: const Text('Culor'),
+            ),
+            SizedBox(height: 20),
             ElevatedButton(
               style: AppDecorations.buttonStyle(),
               onPressed: () {
