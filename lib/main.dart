@@ -1,5 +1,8 @@
 import 'package:dartprojects/culorTwo.dart';
 import 'package:dartprojects/decorations.dart';
+import 'package:dartprojects/snek.dart';
+import 'package:dartprojects/todo.dart';
+import 'package:dartprojects/widgetExplorer.dart';
 import 'package:flutter/material.dart';
 import 'package:dartprojects/culor.dart';
 import 'package:dartprojects/magicLife.dart';
@@ -38,10 +41,10 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MainApp()),
+                  MaterialPageRoute(builder: (context) => todo()),
                 );
               },
-              child: const Text('Culor'),
+              child: const Text('Todo'),
             ),
             SizedBox(height: 20),
             ElevatedButton(
@@ -55,15 +58,38 @@ class MyHomePage extends StatelessWidget {
               child: const Text('Culor Two'),
             ),
             SizedBox(height: 20),
+            ElevatedButton(
+              style: AppDecorations.buttonStyle(),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => snek()),
+                );
+              },
+              child: const Text('Snek'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              style: AppDecorations.buttonStyle(),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MainApp()),
+                );
+              },
+              child: const Text('Culor'),
+            ),
+            SizedBox(height: 20),
+
             // ElevatedButton(
             //   style: AppDecorations.buttonStyle(),
             //   onPressed: () {
             //     Navigator.push(
             //       context,
-            //       MaterialPageRoute(builder: (context) => const MagicLife()),
+            //       MaterialPageRoute(builder: (context) => const WidgetExp()),
             //     );
             //   },
-            //   child: const Text('Magic Life'),
+            //   child: const Text('Widget Demos'),
             // ),
           ],
         ),
