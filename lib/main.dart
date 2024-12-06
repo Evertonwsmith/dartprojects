@@ -5,7 +5,7 @@ import 'package:dartprojects/todo.dart';
 import 'package:dartprojects/widgetExplorer.dart';
 import 'package:flutter/material.dart';
 import 'package:dartprojects/culor.dart';
-import 'package:dartprojects/magicLife.dart';
+import 'package:dartprojects/demoApp.dart';
 
 void main() {
   runApp(const MyApp());
